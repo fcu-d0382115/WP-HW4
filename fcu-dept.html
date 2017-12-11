@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<hr>
+<script>
+
+department=new Array();
+
+department[0]=["會記學系", "國際經營與貿易學系", "國際經營與貿易學系國際企業管理全英語學士班", "財稅學系", "合作經濟暨社會事業經營學系", "統計學系", "經濟學系", "企業管理學系", "行銷學系", "國際企業管理學士學位學程(英語專班)" , "商學進修學士學位學程"];
+
+department[1]=["澳洲墨爾本皇家理工大學商學與創新雙學士學位學程", "美國聖荷西州立大學商學大數據分析雙學士學位學程", "美國普渡大學電機資訊雙學士學位學程"];
+
+department[2]=["機械與電腦輔助工程學系", "纖維與複合材料學系", "工業工程與系統管理學系", "化學工程學系", "航太與系統工程學系", "精密系統設計學士學位學程"];
+
+department[3]=["資訊工程學系", "電機工程學系", "電子工程學系", "自動控制工程學系", "通訊工程學系", "資電不分系榮譽班"];	
+
+department[4]=["土木工程學系", "水利工程與資源保育學系", "都市計畫與空間資訊學系", "運輸與物流學系", "土地管理學系"];
+
+department[5]=["中國文學系", "外國語文學系"];	
+department[6]=["應用數學系", "環境工程與科學學系", "材料科學與工程學系", "光電學系"];
+department[7]=["風險管理與保險學系", "財務金融學系", "財務工程與精算學士學位學程"];
+department[8]=["建築專業學院學士班", "建築學士學位學程", "室內設計學士學位學程", "室內設計進修學士班", "創新設計學士學位學程"];	
+
+function renew(index){
+	for(var i=0;i<department[index].length;i++)
+		document.myForm.member.options[i]=new Option(department[index][i], department[index][i]);	// 設定新選項
+	document.myForm.member.length=department[index].length;	// 刪除多餘的選項
+}
+</script>
+</head>
+
+<body>
+<form name="myForm">
+請選擇學院：<br>
+<select id="mySelect" onChange="renew(this.selectedIndex);">
+	<option value="1">商學院
+	<option value="2">國際科技與管理學院
+	<option value="3">工學院
+	<option value="4">資電學院
+    <option value="5">建設學院
+    <option value="6">人文社會學院
+    <option value="7">理學院
+    <option value="8">金融學院
+    <option value="9">建築專業學院
+</select>
+<br><br>
+當你選擇學院後，下列選單會列出屬於該學院的所有科系：<br>
+<select name="member" >
+	<option value="">請由上方選取學院
+</select>
+
+</form>
+
+<hr>
+</body>
+</html>
